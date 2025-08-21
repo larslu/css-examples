@@ -1,36 +1,78 @@
+<!--testpush -->
 <!DOCTYPE html>
 <html lang="sv">
-<head>
-  <meta charset="UTF-8" />
-  <title>HTML/CSS A-nivå – demos</title>
-  <style>
-    body { font-family: sans-serif; background: #f7f7fb; color: #222; margin:0; }
-    header { padding: 24px; background: linear-gradient(90deg, #4b6cb7, #182848); color:#fff; }
-    main { max-width: 900px; margin: 24px auto; padding: 0 16px; }
-    .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap:16px; }
-    a.card { display:block; background:#fff; padding:16px; border-radius:12px; text-decoration:none; color:#222; border:1px solid #eee; }
-    a.card:hover { background:#f0f0f0; }
-    footer { text-align:center; color: #666; font-size: 12px; padding: 24px; }
-  </style>
-</head>
-<body>
-  <header>
-    <h1>HTML/CSS A-nivå – demos</h1>
-    <p>Små, tydliga exempel som visar “före/efter” och effekter med CSS.</p>
-  </header>
-  <main>
-    <div class="grid">
-      <a class="card" href="menu-basic.html">Grundmeny (HTML)</a>
-      <a class="card" href="menu-styled.html">Stilad meny (CSS)</a>
-      <a class="card" href="menu-fancy.html">Fancy meny (extra)</a>
-      <a class="card" href="hover.html">Hover-effekt på knapp</a>
-      <a class="card" href="animation.html">Pulserande text</a>
-      <a class="card" href="gradient.html">Bakgrundsgradient</a>
-      <a class="card" href="spoiler.html">Spoiler-text</a>
-      <a class="card" href="flexbox-menu.html">Flexbox-lista</a>
-      <a class="card" href="visitcard.html">Visitkort</a>
-    </div>
-  </main>
-  <footer>© Demo-samling för Canvas. HTML + inline CSS.</footer>
-</body>
+
+  <head>
+    <meta charset="UTF-8" />
+    <title>HTML/CSS A-nivå – demos</title>
+    <style>
+      body {
+        font-family: sans-serif;
+        background: #f7f7fb;
+        color: #222;
+        margin: 0;
+      }
+
+      header {
+        padding: 24px;
+        background: linear-gradient(90deg, #4b6cb7, #182848);
+        color: #fff;
+      }
+
+      main {
+        max-width: 900px;
+        margin: 24px auto;
+        padding: 0 16px;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px;
+      }
+
+      a.card {
+        display: block;
+        background: #fff;
+        padding: 16px;
+        border-radius: 12px;
+        text-decoration: none;
+        color: #222;
+        border: 1px solid #eee;
+      }
+
+      a.card:hover {
+        background: #f0f0f0;
+      }
+
+      footer {
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        padding: 24px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h1>HTML/CSS A-nivå – demos</h1>
+      <p>Små, tydliga exempel som visar “före/efter” och effekter med CSS.</p>
+    </header>
+    <main>
+      <div class="grid">
+        <a class="card" href="menu-basic.html">Grundmeny (HTML)</a>
+        <a class="card" href="menu-styled.html">Stilad meny (CSS)</a>
+        <a class="card" href="menu-fancy.html">Fancy meny (extra)</a>
+        <a class="card" href="hover.html">Hover-effekt på knapp</a>
+        <a class="card" href="animation.html">Pulserande text</a>
+        <a class="card" href="gradient.html">Bakgrundsgradient</a>
+        <a class="card" href="spoiler.html">Spoiler-text</a>
+        <a class="card" href="flexbox-menu.html">Flexbox-lista</a>
+        <a class="card" href="visitcard.html">Visitkort</a>
+      </div>
+    </main>
+    <footer>© Demo-samling för Canvas. HTML + inline CSS.</footer>
+  </body>
+
 </html>
