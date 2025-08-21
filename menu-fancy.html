@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8">
+  <title>Extra fancy meny</title>
+  <style>
+    :root { --bg1:#0f2027; --bg2:#203a43; --bg3:#2c5364; --accent:#00d4ff; }
+    * { box-sizing:border-box; }
+    body { margin:0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; 
+           background: linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
+           min-height:100vh; color:#e8f3ff; display:flex; align-items:center; justify-content:center; }
+    nav { backdrop-filter: blur(6px); background: rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.12);
+          padding: 10px; border-radius: 16px; box-shadow: 0 12px 28px rgba(0,0,0,.25); }
+    ul { list-style:none; display:flex; gap:12px; margin:0; padding:0; }
+    a {
+      --underline: 0%;
+      position:relative; display:block; padding:12px 16px; text-decoration:none; color:#e8f3ff;
+      border-radius: 12px; overflow:hidden; transition: transform .2s ease, color .2s ease, background .2s ease;
+    }
+    /* subtle glossy hover background using ::before */
+    a::before {
+      content:""; position:absolute; inset:0; background: radial-gradient(120px 40px at var(--mx,50%) -20%, rgba(255,255,255,.18), transparent 60%);
+      opacity:0; transition: opacity .2s ease;
+    }
+    /* animated underline using ::after */
+    a::after {
+      content:""; position:absolute; left:10px; right:10px; bottom:6px; height:2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(var(--underline));
+      transform-origin: center;
+      transition: transform .22s ease;
+    }
+    a:hover { transform: translateY(-2px); }
+    a:hover::before { opacity:1; }
+    a:hover::after { --underline: 1; }
+    a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+    /* Active item */
+    .active {
+      background: linear-gradient(180deg, rgba(255,255,255,.12), rgba(255,255,255,.06));
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,.15);
+    }
+    /* tiny JS-free mouse position sparkle on hover */
+  </style>
+  <script>
+    // Update CSS variable --mx on mousemove for the glossy highlight
+    document.addEventListener('mousemove', function(e){
+      const t = e.target.closest('a'); if(!t) return;
+      const r = t.getBoundingClientRect();
+      const x = ((e.clientX - r.left)/r.width)*100;
+      t.style.setProperty('--mx', x + '%');
+    }, {passive:true});
+  </script>
+</head>
+<body>
+  <nav aria-label="Fancy navigation">
+    <ul>
+      <li><a class="active" href="#">Hem</a></li>
+      <li><a href="#">Tjänster</a></li>
+      <li><a href="#">Referenser</a></li>
+      <li><a href="#">Kontakt</a></li>
+    </ul>
+  </nav>
+</body>
+</html>
