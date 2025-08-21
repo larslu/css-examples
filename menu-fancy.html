@@ -103,17 +103,27 @@
         box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .15);
       }
 
-      /* tiny JS-free mouse position sparkle on hover */
+      .back-button {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, #007acc, #005a99);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 9999;
+      }
+
+      .back-button:hover {
+        background: linear-gradient(135deg, #005a99, #003f66);
+        transform: translateY(-2px);
+      }
     </style>
-    <script>
-      // Update CSS variable --mx on mousemove for the glossy highlight
-      document.addEventListener('mousemove', function (e) {
-        const t = e.target.closest('a'); if (!t) return;
-        const r = t.getBoundingClientRect();
-        const x = ((e.clientX - r.left) / r.width) * 100;
-        t.style.setProperty('--mx', x + '%');
-      }, { passive: true });
-    </script>
   </head>
 
   <body>
@@ -125,25 +135,7 @@
         <li><a href="#">Kontakt</a></li>
       </ul>
     </nav>
-    <a href="index.html"
-      style="
-         position:fixed;
-         bottom:50px;
-         left:50px;
-         display:inline-block;
-         padding:10px 18px;
-         background:linear-gradient(135deg,#007acc,#005a99);
-         color:white;
-         text-decoration:none;
-         font-weight:bold;
-         border-radius:8px;
-         box-shadow:2px 2px 6px rgba(0,0,0,0.2);
-         transition:all 0.3s ease;
-         z-index:9999;
-       "
-      onmouseover="this.style.background='linear-gradient(135deg,#005a99,#003f66)'; this.style.transform='translateY(-2px)';"
-      onmouseout="this.style.background='linear-gradient(135deg,#007acc,#005a99)'; this.style.transform='translateY(0)';">
-      ⬅ Tillbaka till menyn</a>
+    <a href="index.html" class="back-button">⬅ Tillbaka till menyn</a>
   </body>
 
 </html>

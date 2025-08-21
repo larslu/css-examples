@@ -54,6 +54,27 @@
         text-decoration: none;
         border-radius: 10px;
       }
+
+      .back-button {
+        position: fixed;
+        bottom: 50px;
+        left: 50px;
+        display: inline-block;
+        padding: 10px 18px;
+        background: linear-gradient(135deg, #007acc, #005a99);
+        color: white;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 8px;
+        box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease;
+        z-index: 9999;
+      }
+
+      .back-button:hover {
+        background: linear-gradient(135deg, #005a99, #003f66);
+        transform: translateY(-2px);
+      }
     </style>
   </head>
 
@@ -64,6 +85,8 @@
       <div class="role">Padelspelare</div>
       <a class="btn" href="#">Kontakta</a>
     </div>
+
+    <a href="index.html" class="back-button">⬅ Tillbaka till startsidan</a>
   </body>
 
 </html>
